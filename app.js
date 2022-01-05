@@ -10,8 +10,6 @@ const createNewUser = document.querySelector('#createRow');
 // console.log(addUser);
 let arr = [];
 
-
-
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -52,13 +50,9 @@ async function getRandomUser() {
     displayUsers(arr);
 }
 
-
 addUser.addEventListener('click', () => {
     getRandomUser();
-    console.log(arr);
 });
-
-
 
 doubleMoney.addEventListener('click', function() {
     for (let i = 0; i < arr.length; i++) {
@@ -91,9 +85,6 @@ sortByRichest.addEventListener('click', () => {
 
 calculateEntireWealth.addEventListener('click', () => {
     const temp = document.querySelector('.table-success');
-    console.log("temp is: " + temp);
-    // temp.removeChild(temp.childNodes[0]);
-    // displayUsers(arr);
     if (temp == null) {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
@@ -108,11 +99,12 @@ calculateEntireWealth.addEventListener('click', () => {
         const step4 = document.createElement('th');
         step2.appendChild(step3);
         step2.appendChild(step4);
-        console.log(step1);
         step3.innerHTML = `Total Wealth:`;
-        step4.innerHTML = formatToCurrency(sum);
+        step4.innerHTML = '$ ' + formatToCurrency(sum);
         table.appendChild(step1);
-        console.log(table);
+        console.log(`Developed by: HossAin Shuvo`);
+        console.log(`Email: hossainshuvo7860@gmail.com`);
+        console.log(`Facebook: https://www.facebook.com/hossain.shuvo.7860/`);
     } else {
         const e = document.querySelector('tbody');
         if (e && e.nextSibling) {
